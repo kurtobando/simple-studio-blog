@@ -1,0 +1,21 @@
+.PortraitsImageContainer {
+
+}
+
+.PortraitsImageOverlay {
+  background-image: url("/cityescape-studio-logo.png") ;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 30%;
+  position: relative;
+  display: block;
+  margin: 1rem;
+  transition: 100ms;
+  background-color: #f9f9f9f9;
+}
+
+.PortraitsImageOverlay:hover {
+  transform: scale(1.02);
+}
+
+

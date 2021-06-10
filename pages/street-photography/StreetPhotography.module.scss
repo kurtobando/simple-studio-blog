@@ -1,0 +1,42 @@
+@layer utilities {
+  @variants responsive{
+
+    // defaults
+    .Masonry {
+      column-count: 1;
+      column-gap: 0;
+      @apply mt-5
+    }
+    .BreakInside {
+      break-inside: avoid;
+      background-image: url("/cityescape-studio-logo.png") ;
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: 30%;
+      background-color: #f9f9f9f9;
+      margin: 0.5rem;
+      transition: 100ms;
+    }
+    .BreakInside:hover {
+      transform: scale(1.02);
+    }
+
+    // change column count per device width
+    @screen sm {
+      .Masonry {
+        column-count: 1;
+        @apply mt-5
+      }
+    }
+    @screen md {
+      .Masonry {
+        column-count: 2;
+      }
+    }
+    @screen lg {
+      .Masonry {
+        column-count: 3;
+      }
+    }
+  }
+}

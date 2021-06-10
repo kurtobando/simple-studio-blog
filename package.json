@@ -5,13 +5,19 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "next start"
+    "start": "NODE_ENV=production node server.js"
   },
   "dependencies": {
+    "autoprefixer": "^10.2.6",
+    "axios": "^0.21.1",
     "express": "^4.17.1",
+    "framer-motion": "^4.1.17",
     "next": "10.2.3",
+    "postcss": "^8.3.0",
     "react": "17.0.2",
-    "react-dom": "17.0.2"
+    "react-dom": "17.0.2",
+    "sass": "1.32.13",
+    "tailwindcss": "^2.1.4"
   },
   "devDependencies": {
     "prettier": "2.3.0"
