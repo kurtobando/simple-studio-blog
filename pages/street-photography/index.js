@@ -32,7 +32,7 @@ export default function StreetPhotography({ data }) {
                                                 width={featuredImage.node.mediaDetails.sizes[length].width}
                                                 height={featuredImage.node.mediaDetails.sizes[length].height}
                                                 alt={street.node.title}
-                                                priority={true}
+                                                // priority={true}
                                             />
                                         </a>
                                     </Link>

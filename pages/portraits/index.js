@@ -30,7 +30,7 @@ export default function Portraits({ data }) {
                                                 height={node.featuredImage.node.mediaDetails.sizes[length].height}
                                                 layout={`responsive`}
                                                 alt={node.title}
-                                                priority={true}
+                                                // priority={true}
                                             />
                                         </a>
                                     </Link>
