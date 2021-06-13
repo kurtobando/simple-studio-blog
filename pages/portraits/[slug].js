@@ -34,7 +34,7 @@ function Portrait({ portrait }) {
 
     return (
         <div>
-            <div className="flex flex-wrap flex-row ">
+            <div className="flex flex-wrap flex-row mt-4">
                 <div className="w-full md:w-1/2">
                     <ImageContainer mediaObject={coverPhotoOne} />
                 </div>

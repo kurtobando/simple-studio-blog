@@ -14,10 +14,10 @@ export default function Portraits({ data }) {
                     <title>Portraits | {SITE_TITLE}</title>
                 </Head>
                 <motion.div key="portraits" initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}>
-                    <div className="flex flex-row flex-wrap">
+                    <div className="flex flex-row flex-wrap mt-2">
                         {data.map((portrait) => {
                             return (
-                                <div key={portrait?.node?.id} className="w-full md:w-1/2 lg:w-1/3">
+                                <div key={portrait?.node?.id} className="w-full md:w-1/2 lg:w-1/3 p-1">
                                     <Link href={`/portraits/${portrait?.node?.slug}`}>
                                         <a>
                                             <ImageContainer

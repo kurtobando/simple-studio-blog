@@ -25,7 +25,7 @@ export default function StreetPhotography({ data }) {
                             return (
                                 <div key={slug} className={styles.BreakInside}>
                                     <Link href={`/street-photography/${slug}`}>
-                                        <a className="block">
+                                        <a className="block mx-2 my-3">
                                             <ImageContainer mediaObject={featuredImage.node} alt={title} />
                                         </a>
                                     </Link>
