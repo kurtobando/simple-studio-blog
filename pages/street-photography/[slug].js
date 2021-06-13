@@ -1,15 +1,14 @@
 import Head from "next/head"
-import Image from "next/image"
 import { motion } from "framer-motion"
 import Layout from "../../components/Layout"
-import { SITE_TITLE } from "../../config/constant"
+import ImageContainer from "../../components/ImageContainer"
 import queryAllStreetsSlug from "../../lib/queryAllStreetsSlug"
 import queryStreet from "../../lib/queryStreet"
+import { SITE_TITLE } from "../../config/constant"
 import styles from "./StreetPhotography.module.scss"
 
 export default function StreetPhotographySlug({ data }) {
     const { id, title, featuredImage } = data
-    const length = featuredImage.node?.mediaDetails?.sizes.length - 1
 
     return (
         <Layout>
@@ -23,13 +22,7 @@ export default function StreetPhotographySlug({ data }) {
                 exit={{ opacity: 0 }}>
                 <div className="container mx-auto my-5">
                     <div className={`${styles.BreakInside}`}>
-                        <Image
-                            src={featuredImage.node?.mediaDetails?.sizes[length].sourceUrl}
-                            height={featuredImage.node?.mediaDetails?.sizes[length].height}
-                            width={featuredImage.node?.mediaDetails?.sizes[length].width}
-                            layout={`responsive`}
-                            alt={title}
-                        />
+                        <ImageContainer mediaObject={featuredImage.node} alt={title} />
                     </div>
                 </div>
             </motion.div>

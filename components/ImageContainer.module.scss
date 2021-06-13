@@ -1,8 +1,12 @@
-.PortraitImageContainer {
+.ImageContainer {
   background-image: url("/cityescape-studio-logo.png") ;
   background-repeat: no-repeat;
   background-position: center;
   background-size: 30%;
   background-color: #f9f9f9f9;
-  @apply animate-pulse m-2
+  transition: 100ms;
+
+  &:hover {
+    transform: scale(1.02);
+  }
 }

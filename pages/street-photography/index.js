@@ -1,8 +1,8 @@
 import Head from "next/head"
 import Link from "next/link"
-import Image from "next/image"
 import { motion } from "framer-motion"
 import Layout from "../../components/Layout"
+import ImageContainer from "../../components/ImageContainer"
 import queryAllStreets from "../../lib/queryAllStreets"
 import { SITE_TITLE } from "../../config/constant"
 import styles from "./StreetPhotography.module.scss"
@@ -22,18 +22,11 @@ export default function StreetPhotography({ data }) {
                     <div className={styles.Masonry}>
                         {data.map((street) => {
                             const { title, slug, featuredImage } = street.node
-                            const length = featuredImage.node.mediaDetails.sizes.length - 1
                             return (
                                 <div key={slug} className={styles.BreakInside}>
                                     <Link href={`/street-photography/${slug}`}>
                                         <a className="block">
-                                            <Image
-                                                src={featuredImage.node.mediaDetails.sizes[length].sourceUrl}
-                                                width={featuredImage.node.mediaDetails.sizes[length].width}
-                                                height={featuredImage.node.mediaDetails.sizes[length].height}
-                                                alt={street.node.title}
-                                                // priority={true}
-                                            />
+                                            <ImageContainer mediaObject={featuredImage.node} alt={title} />
                                         </a>
                                     </Link>
                                 </div>
