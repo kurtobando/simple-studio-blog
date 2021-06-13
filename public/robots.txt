@@ -1,0 +1,9 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://studio.cityescape.ph
+
+# Sitemaps
+Sitemap: https://studio.cityescape.ph/sitemap.xml
