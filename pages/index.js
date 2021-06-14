@@ -4,7 +4,7 @@ import Link from "next/link"
 import { motion } from "framer-motion"
 import Navigation from "../components/Navigation"
 import queryHomePageFeaturedImage from "../lib/queryHomePageFeaturedImage"
-import { SITE_DESCRIPTION, SITE_TITLE } from "../config/constant"
+import { SITE_DESCRIPTION, SITE_TITLE, SITE_URL } from "../config/constant"
 import styles from "./Index.module.scss"
 
 export default function Home({ data }) {
@@ -15,8 +15,28 @@ export default function Home({ data }) {
         <>
             <Head>
                 <title>{SITE_TITLE}</title>
+
+                <meta name="title" content={SITE_TITLE} />
                 <meta name="description" content={SITE_DESCRIPTION} />
                 <meta name="robots" content="index, follow" />
+
+                {/* Favicons */}
+                <link rel="manifest" href="/favicon/site.webmanifest" />
+                <link rel="shortcut icon" href="/favicon/favicon.ico" />
+
+                {/* Open Graph / Facebook */}
+                <meta property="og:type" content="website" />
+                <meta property="og:url" content={SITE_URL} />
+                <meta property="og:title" content={SITE_TITLE} />
+                <meta property="og:description" content={SITE_DESCRIPTION} />
+                <meta property="og:image" content="/studio-cityescape-preview.png" />
+
+                {/* Twitter */}
+                <meta property="twitter:card" content="summary_large_image" />
+                <meta property="twitter:url" content={SITE_URL} />
+                <meta property="twitter:title" content={SITE_TITLE} />
+                <meta property="twitter:description" content={SITE_DESCRIPTION} />
+                <meta property="twitter:image" content="/studio-cityescape-preview.png" />
             </Head>
             <div className="flex flex-col ">
                 <div className="w-full shadow-sm bg-white">
