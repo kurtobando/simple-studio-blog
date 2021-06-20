@@ -1,4 +1,4 @@
-const Instagram = () => {
+export default function Instagram(): JSX.Element {
     return (
         <div style={{ width: "20px" }}>
             <svg
@@ -17,5 +17,3 @@ const Instagram = () => {
         </div>
     )
 }
-
-export default Instagram

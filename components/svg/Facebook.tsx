@@ -1,4 +1,4 @@
-const Facebook = () => {
+export default function Facebook(): JSX.Element {
     return (
         <div style={{ width: "20px" }}>
             <svg
@@ -17,5 +17,3 @@ const Facebook = () => {
         </div>
     )
 }
-
-export default Facebook

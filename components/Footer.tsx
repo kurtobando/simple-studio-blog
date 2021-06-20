@@ -2,14 +2,14 @@ import Link from "next/link"
 import Image from "next/image"
 import Facebook from "./svg/Facebook"
 import Instagram from "./svg/Instagram"
-import { SITE_TITLE } from "../config/constant"
+import { SITE_TITLE, SITE_DESCRIPTION } from "../config/constant"
 
-export default function Navigation() {
+export default function Footer(): JSX.Element {
     return (
-        <>
-            <nav className="block ml-6 mr-6 ">
-                <div className="flex flex-row justify-between items-center">
-                    <Link href={`/`}>
+        <div className="mb-6 text-center text-sm p-4 ">
+            <div className="container mx-auto">
+                <div>
+                    <Link href="/">
                         <a>
                             <Image
                                 src={`/cityescape-studio-logo.png`}
@@ -20,7 +20,12 @@ export default function Navigation() {
                             />
                         </a>
                     </Link>
-                    <ul className="flex flex-row flex-wrap w-4/6 md:w-2/3 lg:w-2/5 justify-around items-center uppercase text-sm font-medium">
+                </div>
+                <div className="uppercase">
+                    <p>{SITE_DESCRIPTION}</p>
+                </div>
+                <div className="md:flex md:flex-row md:flex-wrap md:justify-center md:w-2/3 lg:w-1/2 md:mx-auto ">
+                    <ul className="flex flex-row flex-wrap w-2/3 md:w-1/2 justify-around items-center uppercase text-sm mt-6 mx-auto md:mx-0">
                         <li>
                             <Link href={`/portraits`}>
                                 <a className="hover:text-highlight">Portraits</a>
@@ -28,7 +33,7 @@ export default function Navigation() {
                         </li>
                         <li>
                             <Link href={`/street-photography`}>
-                                <a className="hover:text-highlight">Streets</a>
+                                <a className="hover:text-highlight">Street</a>
                             </Link>
                         </li>
                         <li>
@@ -36,15 +41,17 @@ export default function Navigation() {
                                 <a className="hover:text-highlight">About</a>
                             </Link>
                         </li>
-                        <li className="hidden md:block">
-                            <Link href={`/facebook`}>
+                    </ul>
+                    <ul className="flex flex-row flex-wrap w-2/5 md:w-1/3 justify-around mt-6 mx-auto md:mx-0">
+                        <li>
+                            <Link href="/facebook">
                                 <a className="hover:text-highlight">
                                     <Facebook />
                                 </a>
                             </Link>
                         </li>
-                        <li className="hidden md:block">
-                            <Link href={`/instagram`}>
+                        <li>
+                            <Link href="/instagram">
                                 <a className="hover:text-highlight">
                                     <Instagram />
                                 </a>
@@ -52,7 +59,7 @@ export default function Navigation() {
                         </li>
                     </ul>
                 </div>
-            </nav>
-        </>
+            </div>
+        </div>
     )
 }

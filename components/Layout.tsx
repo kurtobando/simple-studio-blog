@@ -3,7 +3,7 @@ import Navigation from "./Navigation"
 import Footer from "./Footer"
 import { SITE_TITLE, SITE_DESCRIPTION, SITE_URL } from "../config/constant"
 
-export default function Layout({ children }) {
+export default function Layout({ children }: { children: any }): JSX.Element {
     return (
         <>
             <Head>
