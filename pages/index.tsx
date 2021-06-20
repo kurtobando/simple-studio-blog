@@ -1,15 +1,20 @@
 import Head from "next/head"
 import Image from "next/image"
 import Link from "next/link"
+import { GetStaticProps } from "next"
 import { motion } from "framer-motion"
 import Navigation from "../components/Navigation"
 import queryHomePageFeaturedImage from "../lib/queryHomePageFeaturedImage"
 import { SITE_DESCRIPTION, SITE_TITLE, SITE_URL } from "../config/constant"
 import styles from "./Index.module.scss"
 
-export default function Home({ data }) {
+interface Props {
+    data: any[]
+}
+
+export default function Home({ data }: Props): JSX.Element {
     const { featuredImage } = data[0].node
-    const length = featuredImage?.node?.mediaDetails?.sizes.length - 1
+    const length: number = featuredImage?.node?.mediaDetails?.sizes.length - 1
 
     return (
         <>
@@ -77,7 +82,7 @@ export default function Home({ data }) {
     )
 }
 
-export async function getStaticProps() {
+export const getStaticProps: GetStaticProps = async () => {
     const [data, error] = await queryHomePageFeaturedImage()
 
     return {

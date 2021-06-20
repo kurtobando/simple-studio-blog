@@ -3,7 +3,7 @@ import { motion } from "framer-motion"
 import Layout from "../../components/Layout"
 import { SITE_TITLE, SITE_DESCRIPTION } from "../../config/constant"
 
-export default function About() {
+export default function About(): JSX.Element {
     return (
         <Layout>
             <Head>

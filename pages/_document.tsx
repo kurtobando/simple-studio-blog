@@ -1,7 +1,13 @@
-import Document, { Html, Head, Main, NextScript } from "next/document"
+import Document, { Html, Head, Main, NextScript, DocumentContext } from "next/document"
 import { GOOGLE_ANALYTICS } from "../config/constant"
 
 class CustomDocument extends Document {
+    static async getInitialProps(ctx: DocumentContext) {
+        const initialProps = await Document.getInitialProps(ctx)
+
+        return initialProps
+    }
+
     // Add Google Analytics in NextJS
     // Reference https://mariestarck.com/add-google-analytics-to-your-next-js-application-in-5-easy-steps/
 

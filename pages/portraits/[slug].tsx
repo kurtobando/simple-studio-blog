@@ -1,4 +1,5 @@
 import Head from "next/head"
+import { GetStaticProps, GetStaticPaths } from "next"
 import { motion } from "framer-motion"
 import Layout from "../../components/Layout"
 import ImageContainer from "../../components/ImageContainer"
@@ -6,7 +7,7 @@ import queryPortrait from "../../lib/queryPortrait"
 import queryAllPortraitsSlug from "../../lib/queryAllPortraitsSlug"
 import { SITE_TITLE } from "../../config/constant"
 
-export default function PortraitsSlug({ data }) {
+export default function PortraitsSlug({ data }): JSX.Element {
     const { title } = data
 
     return (
@@ -25,7 +26,7 @@ export default function PortraitsSlug({ data }) {
     )
 }
 
-function Portrait({ portrait }) {
+function Portrait({ portrait }): JSX.Element {
     const { id, title, content, inFrame, coverPhotos, galleryPhotos, dateAndLocation } = portrait
     const { name, about } = inFrame
     const { date, location } = dateAndLocation
@@ -84,8 +85,8 @@ function Portrait({ portrait }) {
     )
 }
 
-export async function getStaticProps({ params }) {
-    const [data, error] = await queryPortrait({ slug: params.slug })
+export const getStaticProps: GetStaticProps = async ({ params }) => {
+    const [data, error] = await queryPortrait({ slug: params.slug.toString() })
 
     return {
         props: {
@@ -94,7 +95,7 @@ export async function getStaticProps({ params }) {
     }
 }
 
-export async function getStaticPaths() {
+export const getStaticPaths: GetStaticPaths = async () => {
     const [data, error] = await queryAllPortraitsSlug()
 
     return {

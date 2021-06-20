@@ -1,10 +1,11 @@
+import type { AppProps } from "next/app"
 import { useEffect } from "react"
 import { useRouter } from "next/router"
 import { AnimatePresence } from "framer-motion"
 import * as googleAnalytics from "../lib/googleAnalytics"
 import "../styles/app.css"
 
-function MyApp({ Component, pageProps }) {
+function MyApp({ Component, pageProps }: AppProps): JSX.Element {
     // Add Google Analytics in NextJS
     // Reference https://mariestarck.com/add-google-analytics-to-your-next-js-application-in-5-easy-steps/
     const router = useRouter()

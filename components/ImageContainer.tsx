@@ -6,10 +6,10 @@ interface Props {
     alt?: string
 }
 
-export default function ImageContainer(props: Props): false | JSX.Element {
+export default function ImageContainer(props: Props): JSX.Element {
     const { mediaObject = null, alt = "" } = props
 
-    if (mediaObject === null) return false
+    if (mediaObject === null) return <></>
 
     const length: number = mediaObject?.mediaDetails?.sizes.length - 1
     const source: string = mediaObject?.mediaDetails?.sizes[length].sourceUrl

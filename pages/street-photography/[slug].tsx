@@ -1,4 +1,5 @@
 import Head from "next/head"
+import { GetStaticProps, GetStaticPaths } from "next"
 import { motion } from "framer-motion"
 import Layout from "../../components/Layout"
 import ImageContainer from "../../components/ImageContainer"
@@ -7,7 +8,10 @@ import queryStreet from "../../lib/queryStreet"
 import { SITE_TITLE } from "../../config/constant"
 import styles from "./StreetPhotography.module.scss"
 
-export default function StreetPhotographySlug({ data }) {
+interface Props {
+    data: any
+}
+export default function StreetPhotographySlug({ data }: Props): JSX.Element {
     const { id, title, featuredImage } = data
 
     return (
@@ -30,8 +34,8 @@ export default function StreetPhotographySlug({ data }) {
     )
 }
 
-export async function getStaticProps({ params }) {
-    const [data, error] = await queryStreet({ slug: params.slug })
+export const getStaticProps: GetStaticProps = async ({ params }) => {
+    const [data, error] = await queryStreet({ slug: params.slug.toString() })
 
     return {
         props: {
@@ -40,7 +44,7 @@ export async function getStaticProps({ params }) {
     }
 }
 
-export async function getStaticPaths() {
+export const getStaticPaths: GetStaticPaths = async () => {
     const [data, error] = await queryAllStreetsSlug()
 
     return {

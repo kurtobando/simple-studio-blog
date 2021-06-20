@@ -1,12 +1,17 @@
 import Link from "next/link"
 import Head from "next/head"
+import { GetStaticProps } from "next"
 import { motion } from "framer-motion"
 import Layout from "../../components/Layout"
 import ImageContainer from "../../components/ImageContainer"
 import queryAllPortraits from "../../lib/queryAllPortraits"
 import { SITE_TITLE } from "../../config/constant"
 
-export default function Portraits({ data }) {
+interface Props {
+    data: any
+}
+
+export default function Portraits({ data }: Props): JSX.Element {
     return (
         <>
             <Layout>
@@ -36,7 +41,7 @@ export default function Portraits({ data }) {
     )
 }
 
-export async function getStaticProps() {
+export const getStaticProps: GetStaticProps = async () => {
     const [data, error] = await queryAllPortraits()
 
     return {
