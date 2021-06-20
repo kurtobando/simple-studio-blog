@@ -2,7 +2,7 @@ import axios from "axios"
 import { WP_GRAPHQL_URL } from "../config/constant"
 import QueryAllPortraitsSlug from "../graphql/QueryAllPortraitsSlug"
 
-const queryAllPortraitsSlug = async () => {
+export default async function queryAllPortraitsSlug(): Promise<any[]> {
     try {
         const request = await axios.post(WP_GRAPHQL_URL, { query: QueryAllPortraitsSlug() })
         const allPortraitsSlugs = request?.data?.data?.portraits?.edges
@@ -19,5 +19,3 @@ const queryAllPortraitsSlug = async () => {
         return [null, error]
     }
 }
-
-export default queryAllPortraitsSlug

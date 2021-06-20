@@ -1,4 +1,4 @@
-const QueryAllPortraits = () => {
+const QueryAllPortraits = (): string => {
     return `query QueryAllPortraits {
       portraits (first: 1000) {
         edges {

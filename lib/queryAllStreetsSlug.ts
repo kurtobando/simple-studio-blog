@@ -2,7 +2,7 @@ import axios from "axios"
 import { WP_GRAPHQL_URL } from "../config/constant"
 import QueryAllStreetsSlug from "../graphql/QueryAllStreetsSlug"
 
-const queryAllStreetsSlug = async () => {
+export default async function queryAllStreetsSlug(): Promise<any[]> {
     try {
         const request = await axios.post(WP_GRAPHQL_URL, { query: QueryAllStreetsSlug() })
         const streetsSlug = request?.data?.data?.streets?.edges
@@ -19,5 +19,3 @@ const queryAllStreetsSlug = async () => {
         return [null, error]
     }
 }
-
-export default queryAllStreetsSlug

@@ -1,4 +1,10 @@
-const QueryStreet = ({ slug }) => {
+interface Props {
+    slug: string
+}
+
+const QueryStreet = (props: Props): string => {
+    const { slug } = props
+
     return `query QueryStreet {
       street(id: "${slug}", idType: SLUG) {
         id

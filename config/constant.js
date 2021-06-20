@@ -1,7 +1,0 @@
-export const WP_GRAPHQL_URL = process.env.WP_GRAPHQL_URL
-export const SITE_TITLE = process.env.NEXT_PUBLIC_SITE_TITLE
-export const SITE_DESCRIPTION = process.env.NEXT_PUBLIC_SITE_DESCRIPTION
-export const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL
-export const SOCIAL_MEDIA_URL_FACEBOOK = process.env.SOCIAL_MEDIA_URL_FACEBOOK
-export const SOCIAL_MEDIA_URL_INSTAGRAM = process.env.SOCIAL_MEDIA_URL_INSTAGRAM
-export const GOOGLE_ANALYTICS = process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS

@@ -2,7 +2,7 @@ import axios from "axios"
 import { WP_GRAPHQL_URL } from "../config/constant"
 import QueryHomePageFeaturedImage from "../graphql/QueryHomePageFeaturedImage"
 
-const queryHomePageFeaturedImage = async () => {
+export default async function queryHomePageFeaturedImage(): Promise<any[]> {
     try {
         const request = await axios.post(WP_GRAPHQL_URL, { query: QueryHomePageFeaturedImage() })
         const pages = request?.data?.data?.pages?.edges
@@ -17,5 +17,3 @@ const queryHomePageFeaturedImage = async () => {
         return [null, error]
     }
 }
-
-export default queryHomePageFeaturedImage

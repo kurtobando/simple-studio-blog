@@ -1,16 +1,16 @@
-const QueryAllStreets = () => {
-    return `query QueryAllStreets {
-      streets (first: 1000) {
+const QueryHomePageFeaturedImage = (): string => {
+    return `query QueryHomePageFeaturedImage {
+      pages {
         edges {
           node {
-            title
-            slug
+            isFrontPage
+            status
             featuredImage {
               node {
                 mediaDetails {
                   sizes {
-                    height
                     width
+                    height
                     sourceUrl
                   }
                 }
@@ -23,4 +23,4 @@ const QueryAllStreets = () => {
     `
 }
 
-export default QueryAllStreets
+export default QueryHomePageFeaturedImage

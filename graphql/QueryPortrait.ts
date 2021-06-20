@@ -1,4 +1,10 @@
-const QueryPortrait = (slug) => {
+interface Props {
+    slug: string
+}
+
+const QueryPortrait = (props: Props): string => {
+    const { slug } = props
+
     return `query QueryPortrait {
       portrait(id: "${slug}", idType: SLUG) {
         content

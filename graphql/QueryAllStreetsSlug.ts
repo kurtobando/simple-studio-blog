@@ -1,4 +1,4 @@
-const QueryAllStreetsSlug = () => {
+const QueryAllStreetsSlug = (): string => {
     return `query QueryAllStreetsSlug {
       streets (first: 1000) {
         edges {
