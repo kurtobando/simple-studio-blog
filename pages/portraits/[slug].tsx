@@ -3,8 +3,8 @@ import { GetStaticProps, GetStaticPaths } from "next"
 import { motion } from "framer-motion"
 import Layout from "../../components/Layout"
 import ImageContainer from "../../components/ImageContainer"
-import queryPortrait from "../../lib/queryPortrait"
-import queryAllPortraitsSlug from "../../lib/queryAllPortraitsSlug"
+import fetchPortrait from "../../lib/fetchPortrait"
+import fetchAllPortraitsSlug from "../../lib/fetchAllPortraitsSlug"
 import { SITE_TITLE } from "../../config/constant"
 
 export default function PortraitsSlug({ data }): JSX.Element {
@@ -86,7 +86,7 @@ function Portrait({ portrait }): JSX.Element {
 }
 
 export const getStaticProps: GetStaticProps = async ({ params }) => {
-    const [data, error] = await queryPortrait({ slug: params.slug.toString() })
+    const [data, error] = await fetchPortrait({ slug: params.slug.toString() })
 
     return {
         props: {
@@ -96,7 +96,7 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
 }
 
 export const getStaticPaths: GetStaticPaths = async () => {
-    const [data, error] = await queryAllPortraitsSlug()
+    const [data, error] = await fetchAllPortraitsSlug()
 
     return {
         paths: data,

@@ -4,7 +4,7 @@ import { GetStaticProps } from "next"
 import { motion } from "framer-motion"
 import Layout from "../../components/Layout"
 import ImageContainer from "../../components/ImageContainer"
-import queryAllPortraits from "../../lib/queryAllPortraits"
+import fetchAllPortraits from "../../lib/fetchAllPortraits"
 import { SITE_TITLE } from "../../config/constant"
 
 interface Props {
@@ -42,7 +42,7 @@ export default function Portraits({ data }: Props): JSX.Element {
 }
 
 export const getStaticProps: GetStaticProps = async () => {
-    const [data, error] = await queryAllPortraits()
+    const [data, error] = await fetchAllPortraits()
 
     return {
         props: {

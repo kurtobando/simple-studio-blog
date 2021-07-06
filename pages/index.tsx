@@ -4,7 +4,7 @@ import Link from "next/link"
 import { GetStaticProps } from "next"
 import { motion } from "framer-motion"
 import Navigation from "../components/Navigation"
-import queryHomePageFeaturedImage from "../lib/queryHomePageFeaturedImage"
+import fetchHomePageFeaturedImage from "../lib/fetchHomePageFeaturedImage"
 import { SITE_DESCRIPTION, SITE_TITLE, SITE_URL } from "../config/constant"
 import styles from "./Index.module.scss"
 
@@ -83,7 +83,7 @@ export default function Home({ data }: Props): JSX.Element {
 }
 
 export const getStaticProps: GetStaticProps = async () => {
-    const [data, error] = await queryHomePageFeaturedImage()
+    const [data, error] = await fetchHomePageFeaturedImage()
 
     return {
         props: {

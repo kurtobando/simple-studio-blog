@@ -1,20 +1,134 @@
-import axios from "axios"
-import { WP_GRAPHQL_URL } from "../config/constant"
-import QueryPortrait from "../graphql/QueryPortrait"
-
 interface Props {
     slug: string
 }
 
-export default async function queryPortrait(props: Props): Promise<any[]> {
+const queryPortrait = (props: Props): string => {
     const { slug } = props
 
-    try {
-        const request = await axios.post(WP_GRAPHQL_URL, { query: QueryPortrait({ slug }) })
-        const data = request?.data?.data?.portrait
-
-        return [data, null]
-    } catch (error) {
-        return [null, error]
+    return `query QueryPortrait {
+      portrait(id: "${slug}", idType: SLUG) {
+        content
+        title
+        coverPhotos {
+          coverPhotoOne {
+            mediaItemUrl
+            mediaDetails {
+              height
+              width
+              sizes {
+                sourceUrl
+                width
+                height
+                fileSize
+              }
+            }
+          }
+          coverPhotoTwo {
+            mediaItemUrl
+            mediaDetails {
+              height
+              width
+              sizes {
+                sourceUrl
+                width
+                height
+                fileSize
+              }
+            }
+          }
+          coverPhotoThree {
+            mediaItemUrl
+            mediaDetails {
+              height
+              width
+              sizes {
+                sourceUrl
+                width
+                height
+                fileSize
+              }
+            }
+          }
+          coverPhotoFour {
+            mediaItemUrl
+            mediaDetails {
+              height
+              width
+              sizes {
+                sourceUrl
+                width
+                height
+                fileSize
+              }
+            }
+          }
+        }
+        galleryPhotos {
+          galleryPhotoOne {
+            mediaItemUrl
+            mediaDetails {
+              height
+              width
+              sizes {
+                sourceUrl
+                width
+                height
+                fileSize
+              }
+            }
+          }
+          galleryPhotoTwo {
+            mediaItemUrl
+            mediaDetails {
+              height
+              width
+              sizes {
+                sourceUrl
+                width
+                height
+                fileSize
+              }
+            }
+          }
+          galleryPhotoThree {
+            mediaItemUrl
+            mediaDetails {
+              height
+              width
+              sizes {
+                sourceUrl
+                width
+                height
+                fileSize
+              }
+            }
+          }
+          galleryPhotoFour {
+            mediaItemUrl
+            mediaDetails {
+              height
+              width
+              sizes {
+                sourceUrl
+                width
+                height
+                fileSize
+              }
+            }
+          }
+        }
+        inFrame {
+          about
+          name
+        }
+        dateAndLocation {
+          date
+          location
+        }
+        date
+      }
     }
+    `
 }
+
+export default queryPortrait

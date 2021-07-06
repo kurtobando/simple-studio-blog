@@ -1,14 +1,31 @@
-import axios from "axios"
-import { WP_GRAPHQL_URL } from "../config/constant"
-import QueryAllPortraits from "../graphql/QueryAllPortraits"
-
-export default async function queryAllPortraits(): Promise<any[]> {
-    try {
-        const request = await axios.post(WP_GRAPHQL_URL, { query: QueryAllPortraits() })
-        const data = request?.data?.data?.portraits?.edges
-
-        return [data, null]
-    } catch (error) {
-        return [null, error]
+const queryAllPortraits = (): string => {
+    return `query QueryAllPortraits {
+      portraits (first: 1000) {
+        edges {
+          node {
+            id
+            slug
+            title
+            featuredImage {
+              node {
+                mediaItemUrl
+                mediaDetails {
+                  height
+                  width
+                  sizes {
+                    sourceUrl
+                    width
+                    height
+                    fileSize
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
     }
+    `
 }
+
+export default queryAllPortraits

@@ -3,8 +3,8 @@ import { GetStaticProps, GetStaticPaths } from "next"
 import { motion } from "framer-motion"
 import Layout from "../../components/Layout"
 import ImageContainer from "../../components/ImageContainer"
-import queryAllStreetsSlug from "../../lib/queryAllStreetsSlug"
-import queryStreet from "../../lib/queryStreet"
+import fetchAllStreetsSlug from "../../lib/fetchAllStreetsSlug"
+import fetchStreet from "../../lib/fetchStreet"
 import { SITE_TITLE } from "../../config/constant"
 import styles from "./StreetPhotography.module.scss"
 
@@ -35,7 +35,7 @@ export default function StreetPhotographySlug({ data }: Props): JSX.Element {
 }
 
 export const getStaticProps: GetStaticProps = async ({ params }) => {
-    const [data, error] = await queryStreet({ slug: params.slug.toString() })
+    const [data, error] = await fetchStreet({ slug: params.slug.toString() })
 
     return {
         props: {
@@ -45,7 +45,7 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
 }
 
 export const getStaticPaths: GetStaticPaths = async () => {
-    const [data, error] = await queryAllStreetsSlug()
+    const [data, error] = await fetchAllStreetsSlug()
 
     return {
         paths: data,

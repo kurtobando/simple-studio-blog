@@ -4,7 +4,7 @@ import { GetStaticProps } from "next"
 import { motion } from "framer-motion"
 import Layout from "../../components/Layout"
 import ImageContainer from "../../components/ImageContainer"
-import queryAllStreets from "../../lib/queryAllStreets"
+import fetchAllStreets from "../../lib/fetchAllStreets"
 import { SITE_TITLE } from "../../config/constant"
 import styles from "./StreetPhotography.module.scss"
 
@@ -45,7 +45,7 @@ export default function StreetPhotography({ data }: Props): JSX.Element {
 }
 
 export const getStaticProps: GetStaticProps = async () => {
-    const [data, error] = await queryAllStreets()
+    const [data, error] = await fetchAllStreets()
 
     return {
         props: {
