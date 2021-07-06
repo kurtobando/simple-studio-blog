@@ -11,13 +11,7 @@ export default function Footer(): JSX.Element {
                 <div>
                     <Link href="/">
                         <a>
-                            <Image
-                                src={`/cityescape-studio-logo.png`}
-                                width={70}
-                                height={70}
-                                alt={SITE_TITLE}
-                                priority={true}
-                            />
+                            <Image src={`/logo.png`} width={70} height={70} alt={SITE_TITLE} priority={true} />
                         </a>
                     </Link>
                 </div>

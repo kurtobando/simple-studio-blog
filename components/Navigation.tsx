@@ -11,13 +11,7 @@ export default function Navigation(): JSX.Element {
                 <div className="flex flex-row justify-between items-center">
                     <Link href={`/`}>
                         <a>
-                            <Image
-                                src={`/cityescape-studio-logo.png`}
-                                width={70}
-                                height={70}
-                                alt={SITE_TITLE}
-                                priority={true}
-                            />
+                            <Image src={`/logo.png`} width={70} height={70} alt={SITE_TITLE} priority={true} />
                         </a>
                     </Link>
                     <ul className="flex flex-row flex-wrap w-4/6 md:w-2/3 lg:w-2/5 justify-around items-center uppercase text-sm font-medium">
