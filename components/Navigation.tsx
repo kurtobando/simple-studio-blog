@@ -1,6 +1,6 @@
 import Link from "next/link"
-import Facebook from "./svg/Facebook"
-import Instagram from "./svg/Instagram"
+import Facebook from "./Facebook"
+import Instagram from "./Instagram"
 import Logo from "./Logo"
 
 export default function Navigation(): JSX.Element {
