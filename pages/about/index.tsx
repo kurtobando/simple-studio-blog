@@ -17,12 +17,12 @@ export default function About(): JSX.Element {
                 exit={{ opacity: 0 }}>
                 <div className="flex flex-col justify-center" style={{ minHeight: "90vh" }}>
                     <div className="">
-                        <h1 className="font-bold text-xl">What Cityescape Studio?</h1>
+                        <h1 className="font-bold text-xl">What is Cityescape Studio?</h1>
                         <p className="font-light">{SITE_DESCRIPTION}</p>
                     </div>
                     <div className="pt-8">
                         <h1 className="font-bold text-xl">
-                            What{" "}
+                            What is{" "}
                             <a className="underline " href="https://cityescape.ph" target="_blank" rel="noreferrer">
                                 Cityescape.ph?
                             </a>
