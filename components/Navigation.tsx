@@ -1,8 +1,7 @@
 import Link from "next/link"
-import Image from "next/image"
 import Facebook from "./svg/Facebook"
 import Instagram from "./svg/Instagram"
-import { SITE_TITLE } from "../config/constant"
+import Logo from "./Logo"
 
 export default function Navigation(): JSX.Element {
     return (
@@ -11,7 +10,7 @@ export default function Navigation(): JSX.Element {
                 <div className="flex flex-row justify-between items-center">
                     <Link href={`/`}>
                         <a>
-                            <Image src={`/logo.png`} width={70} height={70} alt={SITE_TITLE} priority={true} />
+                            <Logo />
                         </a>
                     </Link>
                     <ul className="flex flex-row flex-wrap w-4/6 md:w-2/3 lg:w-2/5 justify-around items-center uppercase text-sm font-medium">

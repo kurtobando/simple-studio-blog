@@ -1,8 +1,8 @@
 import Link from "next/link"
-import Image from "next/image"
 import Facebook from "./svg/Facebook"
 import Instagram from "./svg/Instagram"
-import { SITE_TITLE, SITE_DESCRIPTION } from "../config/constant"
+import Logo from "./Logo"
+import { SITE_DESCRIPTION } from "../config/constant"
 
 export default function Footer(): JSX.Element {
     return (
@@ -11,7 +11,7 @@ export default function Footer(): JSX.Element {
                 <div>
                     <Link href="/">
                         <a>
-                            <Image src={`/logo.png`} width={70} height={70} alt={SITE_TITLE} priority={true} />
+                            <Logo />
                         </a>
                     </Link>
                 </div>
