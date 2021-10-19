@@ -12,7 +12,7 @@ interface Props {
     data: any
 }
 export default function StreetPhotographySlug({ data }: Props): JSX.Element {
-    const { id, title, featuredImage } = data
+    const { id = null, title = null, featuredImage = null } = data
 
     return (
         <Layout>
