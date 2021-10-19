@@ -8,7 +8,7 @@ import fetchAllPortraitsSlug from "../../lib/fetchAllPortraitsSlug"
 import { SITE_TITLE } from "../../config/constant"
 
 export default function PortraitsSlug({ data }): JSX.Element {
-    const { title = null } = data
+    const { title } = data
 
     return (
         <Layout>
@@ -97,9 +97,6 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
 
 export const getStaticPaths: GetStaticPaths = async () => {
     const [data, error] = await fetchAllPortraitsSlug()
-
-    console.log('portraits data: ',  data)
-    console.log('portraits error: ', error)
 
     return {
         paths: data,

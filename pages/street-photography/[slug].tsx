@@ -12,7 +12,7 @@ interface Props {
     data: any
 }
 export default function StreetPhotographySlug({ data }: Props): JSX.Element {
-    const { id = null, title = null, featuredImage = null } = data
+    const { id, title, featuredImage } = data
 
     return (
         <Layout>
@@ -47,8 +47,6 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
 export const getStaticPaths: GetStaticPaths = async () => {
     const [data, error] = await fetchAllStreetsSlug()
 
-    console.log('street-photography data: ', data)
-    console.log('street-photography error: ', error)
     return {
         paths: data,
         fallback: false,
