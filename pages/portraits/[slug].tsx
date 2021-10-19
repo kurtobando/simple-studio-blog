@@ -8,7 +8,7 @@ import fetchAllPortraitsSlug from "../../lib/fetchAllPortraitsSlug"
 import { SITE_TITLE } from "../../config/constant"
 
 export default function PortraitsSlug({ data }): JSX.Element {
-    const { title } = data
+    const { title = null } = data
 
     return (
         <Layout>
