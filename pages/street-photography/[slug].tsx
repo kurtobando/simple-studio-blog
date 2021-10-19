@@ -47,6 +47,8 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
 export const getStaticPaths: GetStaticPaths = async () => {
     const [data, error] = await fetchAllStreetsSlug()
 
+    console.log(data)
+    console.log(error)
     return {
         paths: data,
         fallback: false,

@@ -98,6 +98,8 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
 export const getStaticPaths: GetStaticPaths = async () => {
     const [data, error] = await fetchAllPortraitsSlug()
 
+    console.log(data)
+    
     return {
         paths: data,
         fallback: false,
